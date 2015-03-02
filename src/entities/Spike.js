@@ -47,6 +47,7 @@ class Spike extends Entity {
 
     if (this.center.x > this.game.width) {
       this.game.c.entities.destroy(this);
+      this.game.score += 1;
     }
   }
 }

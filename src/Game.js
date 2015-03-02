@@ -37,6 +37,8 @@ class Game {
   ui: UI;
   _spawner: Spawner;
 
+  score: number;
+
   constructor() {
     this.audioManager = new AudioManager();
 
@@ -85,12 +87,16 @@ class Game {
     this.assets = assets;
     this.audioManager.setAudioMap(assets.audio);
 
-    setTimeout(() => {
-      this.start();
-    }, 0);
+    if (document.location.search.indexOf('skiptitle') !== -1) {
+      setTimeout(() => {
+        this.start();
+      }, 0);
+    }
   }
 
   start() {
+    this.score = 0;
+
     this.fsm.start();
 
     this.createEntity(Elastic, {

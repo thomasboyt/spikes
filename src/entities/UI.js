@@ -12,22 +12,27 @@ class UI extends Entity {
   }
 
   drawAttract(ctx: any) {
-    ctx.font = '64px Helvetica';
-    ctx.textAlign = "center";
+    ctx.font = '24px Helvetica';
+    ctx.textAlign = 'center';
 
-    ctx.fillText("boilerplate demo", 320, 210);
-    ctx.fillText("press space", 320, 280);
+    var center = this.game.width / 2;
+    ctx.fillText('spikes', center, 80);
+    ctx.fillText('use left/right arrows', center, 120);
+    ctx.fillText('press space to start', center, 160);
   }
 
   drawPlaying(ctx: any) {
+    ctx.font = '12px Helvetica';
+    ctx.textAlign = 'right';
+    ctx.fillText(this.game.score, this.game.width - 10, this.game.height - 5);
   }
 
   drawEnd(ctx: any) {
     ctx.font = '32px Helvetica';
     ctx.textAlign = "center";
 
-    ctx.fillText("you lost", this.game.width / 2, 120);
-    ctx.fillText("press space to replay", this.game.width / 2, 150);
+    ctx.fillText('game over', this.game.width / 2, 120);
+    ctx.fillText('score: ' + this.game.score, this.game.width / 2, 150);
   }
 
   drawLoading(ctx: any) {
