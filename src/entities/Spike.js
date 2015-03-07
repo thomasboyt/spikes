@@ -50,6 +50,14 @@ class Spike extends Entity {
       this.game.score += 1;
     }
   }
+
+  static getWidth(): number {
+    return 10;
+  }
+
+  static getHeight(): number {
+    return 10;
+  }
 }
 
 module.exports = Spike;

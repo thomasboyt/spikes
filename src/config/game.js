@@ -12,5 +12,16 @@ module.exports = {
 
   horizAccel: 2,
   dragAccel: -1,
-  horizMaxSpeed: 3
+  horizMaxSpeed: 3,
+
+  structures: [`
+    .xx.
+    x..x
+    x..x
+    .xx.
+  `, `
+    x
+    x
+    x
+  `]
 };
