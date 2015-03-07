@@ -21,7 +21,11 @@ module.exports = {
     .xx.
   `, `
     x
+    .
     x
+    .
     x
+  `, `
+    x..x..x
   `]
 };

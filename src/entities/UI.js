@@ -24,15 +24,17 @@ class UI extends Entity {
   drawPlaying(ctx: any) {
     ctx.font = '12px Helvetica';
     ctx.textAlign = 'right';
-    ctx.fillText(this.game.score, this.game.width - 10, this.game.height - 5);
+    var score = (this.game.sessionTime / 1000).toFixed(3);
+    ctx.fillText(score, this.game.width - 10, this.game.height - 5);
   }
 
   drawEnd(ctx: any) {
     ctx.font = '32px Helvetica';
     ctx.textAlign = "center";
 
+    var score = (this.game.sessionTime / 1000).toFixed(3);
     ctx.fillText('game over', this.game.width / 2, 120);
-    ctx.fillText('score: ' + this.game.score, this.game.width / 2, 150);
+    ctx.fillText(`score: ${score}`, this.game.width / 2, 150);
   }
 
   drawLoading(ctx: any) {

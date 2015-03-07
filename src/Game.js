@@ -37,7 +37,7 @@ class Game {
   ui: UI;
   _spawner: Spawner;
 
-  score: number;
+  sessionTime: number;
 
   constructor() {
     this.audioManager = new AudioManager();
@@ -95,7 +95,7 @@ class Game {
   }
 
   start() {
-    this.score = 0;
+    this.sessionTime = 0;
 
     this.fsm.start();
 
@@ -157,6 +157,7 @@ class Game {
 
     if (this.fsm.is('playing')) {
       this._spawner.update(dt);
+      this.sessionTime += dt;
     }
   }
 }
